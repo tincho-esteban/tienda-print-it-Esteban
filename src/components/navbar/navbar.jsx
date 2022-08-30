@@ -2,7 +2,7 @@ import './navbar.css';
 import logo from './logo.png';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function navbar() {
+const navbar = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-dark  nav-grid">
             <div className="container-fluid">
@@ -30,7 +30,7 @@ function navbar() {
                             <NavDropdown.Item href="#action/3.2">Impresión 3D</NavDropdown.Item>
                         </NavDropdown>
                         <li className="nav-item">
-                            <a className="nav-link" href="pages/contacto.html">Contacto</a>
+                            <a className="nav-link" href="a">Contacto</a>
                         </li>
                     </ul>
                 </div>
