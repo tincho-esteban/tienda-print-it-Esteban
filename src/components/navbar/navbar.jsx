@@ -1,17 +1,17 @@
-import './navbar.css';
-import logo from './logo.png';
+import './NavBar.css';
+import Logo from './Logo.png';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from '../CartWidget/CartWidget';
 
 const navbar = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-dark  nav-grid">
             <div className="container-fluid">
                 <a className="navbar-brand nav-item" href="index.html">
-                    <img className="logo" src={logo} alt="logo-print-it-3D"/>
+                    <img className="logo" src={Logo} alt="logo-print-it-3D"/>
                     <h1 className="PrintIt">Print it 3D</h1>
                 </a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown">
@@ -31,6 +31,11 @@ const navbar = () => {
                         </NavDropdown>
                         <li className="nav-item">
                             <a className="nav-link" href="a">Contacto</a>
+                        </li>
+                        <li className="nav-item">
+                            <button className="nav-link">
+                                <CartWidget/>
+                            </button>
                         </li>
                     </ul>
                 </div>

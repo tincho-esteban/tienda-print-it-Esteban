@@ -15,7 +15,14 @@ nav a h1 {
     margin-top: 10px;
 }
 
-nav a ul li a {
+nav div a ul li a {
     color: white;
     font-size: 20px;
+}
+
+button {
+    color: white;
+    height: 30px;
+    border: none;
+    background-color: rgba(0,0,0,0);
 }
