@@ -1,0 +1,28 @@
+.contPrincipal {
+    color: black;
+    width: 270px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin: 30px;
+    padding-bottom: 150px;
+}
+.contador {
+    width: 120px;
+}
+
+.bloqueContador {
+    position: absolute;
+    bottom: 10px;
+}
+
+.Carrito {
+    margin: 10px 0px;
+    width: 190px;
+}
+
+.foto {
+    width: 230px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
