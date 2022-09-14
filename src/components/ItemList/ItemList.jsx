@@ -1,4 +1,4 @@
-import Item from "../Item/Item";
+import ItemDetail from "../Item/ItemDetail";
 
 const ItemList = ({lista}) => {
   return (
@@ -6,7 +6,7 @@ const ItemList = ({lista}) => {
         {
         lista.map((producto)=>{
         return(
-            <Item key={producto.id} img={producto.img} titulo={producto.nombre} precio={producto.precio}/>
+            <ItemDetail key={producto.id} img={producto.img} titulo={producto.nombre} descripcion={producto.descripcion} precio={producto.precio}/>
             );
         })}
     </>
