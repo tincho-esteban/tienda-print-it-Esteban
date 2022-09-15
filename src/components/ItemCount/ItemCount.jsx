@@ -4,25 +4,34 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ItemCount = ({Stock, Initial}) => {
+const ItemCount = ({Stock, Initial, onAdd}) => {
 
     const [Contador, setContador ] = useState(Initial);
+    const [disableIncrease, setDisableIncrease] = useState(false);
+    const [disableDecrease, setDisableDecrease] = useState(false);
 
     const decrease = () => {
       if (Contador === 1) {
-        document.getElementById('decreaseButton').disabled = true;
+        setDisableDecrease(true);
         setContador(Contador - 1);
+        toast.error('No se puede selecciona menos', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          }
+          )
       } else {
         setContador(Contador - 1);
-        document.getElementById('increaseButton').disabled = false;
+        setDisableIncrease(false);
       };
   };
 
     const increase = () => {
       if (Contador === (Stock - 1)) {
-        document.getElementById('increaseButton').disabled = true;
+        setDisableIncrease(true);
         setContador(Contador + 1);
-        toast.error('no hay suficiente stock', {
+        toast.error('No hay suficiente stock', {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: true,
@@ -31,18 +40,25 @@ const ItemCount = ({Stock, Initial}) => {
           )
       } else {
         setContador(Contador + 1);
-        document.getElementById('decreaseButton').disabled = false;
+        setDisableDecrease(false);
       }
     };
+
+    const onAddCart = () => {
+      if (Contador <= Stock) {
+        onAdd(Contador)
+      }
+    }
+
   return (
   <>
     <p>Stock: {Stock}</p>
       <ButtonGroup>
-    <Button variant="primary" onClick={decrease} id='decreaseButton'>-</Button>
+    <Button variant="primary" onClick={decrease} disabled={disableDecrease}>-</Button>
     <p className='contador'>{Contador}</p>
-    <Button variant="primary" onClick={increase}id='increaseButton'>+</Button>
+    <Button variant="primary" onClick={increase} disabled={disableIncrease}>+</Button>
     </ButtonGroup>
-    <Button variant="primary" className='Carrito' id='cartButton'>Añadir al carrito</Button>
+    <Button variant="primary" className='Carrito' onClick={onAddCart}>Añadir al carrito</Button>
     <ToastContainer />
   </>
   )
