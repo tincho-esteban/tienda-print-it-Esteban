@@ -1,4 +1,5 @@
 import Item from "../Item/Item";
+import { Link } from "react-router-dom";
 
 const ItemList = ({lista}) => {
   return (
@@ -6,7 +7,9 @@ const ItemList = ({lista}) => {
         {
         lista.map((producto)=>{
         return(
-            <Item key={producto.id} img={producto.img} titulo={producto.nombre} descripcion={producto.descripcion} precio={producto.precio}/>
+          <Link key={producto.id} to={"/item/"+ producto.id}>
+            <Item key={producto.id} img={producto.img} titulo={producto.nombre} precio={producto.precio}/>
+            </Link>
             );
         })}
     </>
