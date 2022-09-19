@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
             const dataFiltrada = response.filter((product) => product.id === id);
             setProductDetail(...dataFiltrada);
         })
-    },)
+    },[id])
 
     const getItem = new Promise((resolve) => {
         setTimeout(() => {
