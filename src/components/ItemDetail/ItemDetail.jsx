@@ -4,10 +4,13 @@ import './ItemDetail.css';
 import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 
 const Item = ({detalle}) => {
 
   const [cart, setCart ] = useState(0);
+  const [disableCount, setDisableCount] = useState(false);
 
   const onAddCart = (cantidad) => {
     toast(`Agregaste ${cantidad} productos al carrito`, {
@@ -17,6 +20,7 @@ const Item = ({detalle}) => {
       closeOnClick: true,
       })
       setCart(cantidad);
+      setDisableCount(true);
   };
   return (
     <div className='contFondo'>
@@ -26,7 +30,7 @@ const Item = ({detalle}) => {
     <p>{detalle.descripcion}</p>
     <h5>${detalle.precio}</h5>
     <div className='bloqueContador'>
-    <ItemCount Stock={detalle.stock} Initial={1} onAdd={onAddCart}/>
+    {disableCount ? (<Link to={"/cart"} className='Carrito'><Button variant="warning">Ver el carrito</Button></Link>) : (<ItemCount Stock={detalle.stock} Initial={1} onAdd={onAddCart}/>)}
     </div>
     <ToastContainer />
     </Card>

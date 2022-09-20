@@ -1,7 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { useState } from 'react';
-import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -60,7 +59,6 @@ const ItemCount = ({Stock, Initial, onAdd}) => {
     <Button variant="primary" onClick={increase} disabled={disableIncrease}>+</Button>
     </ButtonGroup>
     <Button variant="primary" className='Carrito' onClick={onAddCart}>Añadir al carrito</Button>
-    <Link to={"/cart"}><Button variant="primary" className='Carrito'>Finalizar compra</Button></Link>
     <ToastContainer />
   </>
   )
