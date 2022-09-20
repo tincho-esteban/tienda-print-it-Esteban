@@ -1,10 +1,14 @@
 import ItemCount from '../ItemCount/ItemCount';
 import Card from 'react-bootstrap/Card';
 import './ItemDetail.css';
+import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Item = ({detalle}) => {
+
+  const [cart, setCart ] = useState(0);
+
   const onAddCart = (cantidad) => {
     toast(`Agregaste ${cantidad} productos al carrito`, {
       position: "top-right",
@@ -12,6 +16,7 @@ const Item = ({detalle}) => {
       hideProgressBar: true,
       closeOnClick: true,
       })
+      setCart(cantidad);
   };
   return (
     <div className='contFondo'>
