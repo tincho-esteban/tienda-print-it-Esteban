@@ -20,6 +20,7 @@ const Cart = () => {
           ) : (
           <>
           {cart.map((detalle, cantidad) => (
+              <>
               <Card className='contPrincipal' key={detalle.id}>
               <img src={detalle.img} alt={detalle.nombre} className='foto'/>
               <h4>{detalle.nombre}</h4>
@@ -27,7 +28,9 @@ const Cart = () => {
               <h5>Total: ${detalle.precio*detalle.cantidad}</h5>
               <Button onClick={() => removeItem(detalle.id)}>Eliminar producto</Button>
               </Card>
+              </>
       ))}
+          <h3>Total carrito: ${cart.reduce((acc,cartItem) => acc + (cartItem.precio*cartItem.cantidad), 0)} </h3>
           </>
       )}
   </div>

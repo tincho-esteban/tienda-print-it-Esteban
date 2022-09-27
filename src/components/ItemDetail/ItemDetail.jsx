@@ -2,7 +2,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import Card from 'react-bootstrap/Card';
 import './ItemDetail.css';
 import { useState, useContext } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
@@ -35,7 +35,6 @@ const ItemDetail = ({detalle}) => {
     <div className='bloqueContador'>
     {disableCount ? (<Link to={"/cart"} className='Carrito'><Button variant="warning">Ver el carrito</Button></Link>) : (<ItemCount setCantidad={setCantidad} cantidad={cantidad} stock={detalle.stock} onAdd={onAddCart} detalle={detalle}/>)}
     </div>
-    <ToastContainer />
     </Card>
     </div>
   )

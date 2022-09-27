@@ -1,9 +1,15 @@
 import './NavBar.css';
 import Logo from './Logo.png';
 import CartWidget from '../CartWidget/CartWidget';
-import { NavLink } from "react-router-dom"; 
+import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from '../Context/CartContext';
+import { Display } from 'react-bootstrap-icons';
 
 const navbar = () => {
+
+    const {cart} = useContext(CartContext);
+
     return (
         <nav className="navbar navbar-expand-md navbar-dark  nav-grid">
             <div className="container-fluid">
@@ -25,9 +31,11 @@ const navbar = () => {
                         <li className="nav-item">
                             <NavLink className="nav-link" to={"/category/petg"}>Petg</NavLink>
                         </li>
-                        <li className="nav-item">
-                        <NavLink className="nav-link" to={"/cart"}><CartWidget/></NavLink>
-                        </li>
+                        {cart.length > 0 &&
+                            <li className="nav-item">
+                            <NavLink className="nav-link" to={"/cart"}><CartWidget/></NavLink>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
