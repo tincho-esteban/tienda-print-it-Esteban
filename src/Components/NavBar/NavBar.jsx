@@ -4,9 +4,8 @@ import CartWidget from '../CartWidget/CartWidget';
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from '../Context/CartContext';
-import { Display } from 'react-bootstrap-icons';
 
-const navbar = () => {
+const NavBar = () => {
 
     const {cart} = useContext(CartContext);
 
@@ -43,4 +42,4 @@ const navbar = () => {
     )
 }
 
-export default navbar
+export default NavBar;
