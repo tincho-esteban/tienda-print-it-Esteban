@@ -4,3 +4,22 @@
     align-items: center;
     justify-content: center;
 }
+
+.cartContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.cartContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.cartForm {
+    margin: 15px;
+    padding: 10px;
+}
+
+.cartForm input {
+    margin-bottom: 10px;
+}

@@ -13,14 +13,14 @@ function App() {
       <CartProvider>
         <BrowserRouter>
         <NavBar />
-          <header className="App-header">
+          <main className="App-header">
             <Routes>
                 <Route path='/' element={<ItemListContainer/>}/>
                 <Route path='/category/:categoryName' element={<ItemListContainer />} />
                 <Route path='/item/:id' element={<ItemDetailContainer /> } />
                 <Route path='/cart' element={<Cart/>} />
             </Routes>
-          </header>
+          </main>
         </BrowserRouter>
       </CartProvider>
     </div>

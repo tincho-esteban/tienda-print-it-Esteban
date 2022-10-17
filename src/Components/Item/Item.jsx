@@ -1,17 +1,14 @@
-import Card from 'react-bootstrap/Card';
-import './Item.css';
+import Card from "react-bootstrap/Card";
+import "./Item.css";
 
-const Item = ({img, titulo, precio}) => {
-  return (
-    <Card className='contPrincipal'>
-    <img src={img} alt={titulo} className='foto'/>
-    <h4>{titulo}</h4>
-    <h5>${precio}</h5>
-    <div className='bloqueContador'>
-    </div>
-    </Card>
-    
-  )
-}
+const Item = ({ img, title, price }) => {
+    return (
+        <Card className="mainContainer">
+            <img src={img} alt={title} className="picture" />
+            <h4>{title}</h4>
+            <h5>${price}</h5>
+        </Card>
+    );
+};
 
 export default Item;
