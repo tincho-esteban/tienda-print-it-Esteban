@@ -46,7 +46,7 @@ const NavBar = () => {
                                 Petg
                             </NavLink>
                         </li>
-                        {cart.length < 0 && (
+                        {cart.length > 0 && (
                             <li className="nav-item">
                                 <NavLink className="nav-link" to={"/cart"}>
                                     <CartWidget />
