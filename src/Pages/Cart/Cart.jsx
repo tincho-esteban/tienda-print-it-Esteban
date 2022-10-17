@@ -57,7 +57,10 @@ const Cart = () => {
                 <div className="cartContent">
                     {cart.map((product) => (
                         <>
-                            <Card className="contPrincipal" key={product.id}>
+                            <Card
+                                className="cartMainContainer"
+                                key={product.id}
+                            >
                                 <img
                                     src={product.img}
                                     alt={product.name}
