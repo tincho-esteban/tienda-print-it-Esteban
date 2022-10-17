@@ -4,7 +4,7 @@ Este proyecto esta realizado en React, Bootstrap y toastify, es el proyecto fina
 
 Es un Ecommerce de Impresión 3D
 
-##Gif de navegacion
+## Gif de navegacion
 
 ![Alt Text](https://media.giphy.com/media/mP1r5aP0AZbvDBWFAI/giphy.gif)
 
